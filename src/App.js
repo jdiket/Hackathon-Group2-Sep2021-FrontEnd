@@ -1,16 +1,15 @@
 import './App.css';
 import { Route, Switch, Redirect, Link } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar'
+import AboutPage from './pages/AboutPage/AboutPage'
 
 function App() {
   return (
     <div>
-      <Link to='/about'>About</Link>
-      <Link to='/find'>Find</Link>
-      <Link to='/'>Home</Link>
-      {/*nav component here*/}
+      <NavBar />
       <Switch>
         <Route path="/about">
-          <h1>About Page</h1>
+          <AboutPage />
         </Route>
         <Route path="/find">
           <h1>Find Page</h1>

@@ -12,6 +12,11 @@ import { CardActionArea } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
+// Material UI Icons
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+
+
 const onSwipe = (direction) => {
   console.log('You swiped: ' + direction)
 }
@@ -37,11 +42,20 @@ const TinderCards = () => {
               alt="dog"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lorem ipsum dolor
+              <div className="card__header">
+                <Typography gutterBottom variant="h5" component="div">
+                  Brandy
+                </Typography>
+                <Button variant="outlined">more info</Button>
+              </div>
+              <Typography variant="body2" color="text.secondary">
+                Golden Retriever
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quam velit dolorem laboriosam magni aspernatur corporis suscipit, enim nam, temporibus explicabo id sit neque necessitatibus iure facilis? Quia, molestiae sunt!
+                Brooklyn, NY
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Loves long walks on the beach and the fresh of a new tennis ball
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -50,9 +64,8 @@ const TinderCards = () => {
 
  
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button variant="outlined">no</Button>
-        <Button variant="outlined">more info</Button>
-        <Button variant="outlined">yes</Button>
+        <Button className="card__button" variant="outlined"><CloseIcon/></Button>
+        <Button className="card__button" variant="outlined"><CheckIcon/></Button>
       </Stack>
     
     </div>

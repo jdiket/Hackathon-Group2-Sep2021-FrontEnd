@@ -6,3 +6,10 @@
   justify-content: center;
   margin: 10px auto;
 }
+.card__button {
+  width: 50%;
+}
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}

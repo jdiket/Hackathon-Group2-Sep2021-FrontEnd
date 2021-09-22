@@ -1,3 +1,15 @@
+:root {
+  --primary-brand: #ed489e;
+  --secondary-brand: #4b4ded;
+  --tertiary-brand: #F3D9DA;
+  --dark: #0e0e2c;
+  --success: #31D0AA;
+  --text: #4a4a68;
+  --subtle-text: #8c8ca1;
+  --accent: #ecf1f4;
+  --light: #fafcfe;
+}
+
 .App {
   text-align: center;
 }

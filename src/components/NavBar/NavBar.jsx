@@ -8,6 +8,7 @@ export default function NavBar() {
       <Link to='/about' className="link">About</Link>
       <Link to='/find' className="link">Find</Link>
       <Link to='/' className="link">Home</Link>
+      <Link to='/detail' className="link">Dog Details Page</Link>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar'
-import AboutPage from './pages/AboutPage/AboutPage'
+import NavBar from './components/NavBar/NavBar';
+import AboutPage from './pages/AboutPage/AboutPage';
+import DogDetailPage from './pages/DogDetailPage/DogDetailPage';
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
         <Route path="/find">
           <h1>Find Page</h1>
         </Route>
+
+        <Route path="/detail" component={DogDetailPage} />
 
         <Redirect to="/" />
       </Switch>

@@ -17,8 +17,13 @@
   margin: 0 5rem;
 }
 
-.arrow-show {
+.arrow-fade-in-start {
+  opacity: 0;
+}
+
+.arrow-fade-in-end {
   opacity: 1;
+  transition: all 450ms linear;
 }
 
 .arrow-hidden {

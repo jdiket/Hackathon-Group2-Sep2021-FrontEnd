@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 const HomePage = () => {
 
-  const [isShowingArrow, setIsShowingArrow] = useState(true)
+  const [fadeState, setFadeState] = useState('arrow-fade-in-start') 
 
   const onSwipe = (direction) => {
     console.log('You swiped: ' + direction)
@@ -16,23 +16,32 @@ const HomePage = () => {
   }
 
   useEffect(() => {
-    const eraseArrowIndicator = () => {
+
+    const changeFadeStateOnLoad =() => {
       setTimeout(() => {
-        setIsShowingArrow(false)
+        setFadeState('arrow-fade-in-end')
+      },250)
+    }
+
+    const hideArrow = () => {
+      setTimeout(() => {
+        setFadeState('arrow-hidden')
       },2000)
     }
-    eraseArrowIndicator();
+
+    changeFadeStateOnLoad()
+    hideArrow();
   },[])
 
   return (
     <div className="HomePage">
       <h1> Home Page </h1>
       <div className="card-swipe-container">
-        <div className={`left-arrow-container arrow ${isShowingArrow ? 'arrow-show' : 'arrow-hidden'} `}>
+        <div className={`left-arrow-container ${fadeState}`}>
         {'<-'} Swipe Left
         </div>
         <TinderCards />
-        <div className={`right-arrow-container arrow ${isShowingArrow ? 'arrow-show' : 'arrow-hidden'} `}>
+        <div className={`right-arrow-container arrow ${fadeState}`}>
           Swipe Right {'->'}
         </div>
       </div>

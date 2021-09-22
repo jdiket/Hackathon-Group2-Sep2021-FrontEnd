@@ -4,12 +4,8 @@ import { useState, useEffect } from 'react';
 
 
 const HomePage = () => {
-<<<<<<< HEAD
 
   const [fadeState, setFadeState] = useState('arrow-fade-in-start') 
-=======
-  const [isShowingArrow, setIsShowingArrow] = useState(true)
->>>>>>> 9e6cab4 (refactoring)
 
   useEffect(() => {
 

@@ -1,0 +1,7 @@
+.card {
+  margin: 40px auto;
+}
+
+.card__buttons {
+  justify-content: center;
+}

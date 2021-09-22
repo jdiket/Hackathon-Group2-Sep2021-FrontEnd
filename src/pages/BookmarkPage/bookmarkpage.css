@@ -1,0 +1,13 @@
+.header {
+    text-align: center;
+    margin: 2rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 80%;
+    margin-top: 2rem;
+    margin: 0 auto;
+    grid-gap:3rem;
+}

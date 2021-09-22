@@ -20,7 +20,6 @@ const App = () => {
         <Route path="/find">
           <h1>Find Page</h1>
         </Route>
-
         <Route path="/bookmark" component={BookmarkPage} />
         <Route path="/detail" component={DogDetailPage} />
 

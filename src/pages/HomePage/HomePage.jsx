@@ -4,16 +4,12 @@ import { useState, useEffect } from 'react';
 
 
 const HomePage = () => {
+<<<<<<< HEAD
 
   const [fadeState, setFadeState] = useState('arrow-fade-in-start') 
-
-  const onSwipe = (direction) => {
-    console.log('You swiped: ' + direction)
-  }
-  
-  const onCardLeftScreen = (myIdentifier) => {
-    console.log(myIdentifier + ' left the screen')
-  }
+=======
+  const [isShowingArrow, setIsShowingArrow] = useState(true)
+>>>>>>> 9e6cab4 (refactoring)
 
   useEffect(() => {
 

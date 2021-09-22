@@ -50,9 +50,9 @@ const TinderCards = () => {
 
  
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button variant="outlined">yes</Button>
-        <Button variant="outlined">more info</Button>
         <Button variant="outlined">no</Button>
+        <Button variant="outlined">more info</Button>
+        <Button variant="outlined">yes</Button>
       </Stack>
     
     </div>

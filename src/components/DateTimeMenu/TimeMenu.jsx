@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { useState } from 'react';
-import DatePicker from '../DatePicker/DatePicker'
+import './datetimemenu.css'
 
 const DateTimeMenu = () => { 
   const StyledMenu = styled((props) => (
@@ -60,10 +60,11 @@ const DateTimeMenu = () => {
   };
 
   return (
-    <div className="datetimemenu">
+    <div className="timemenu">
         <Button
-          id="demo-customized-button"
-          aria-controls="demo-customized-menu"
+          className="button__menu"
+          id="time-button"
+          aria-controls="time-menu"
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           variant="contained"
@@ -74,9 +75,9 @@ const DateTimeMenu = () => {
           Time
         </Button>
         <StyledMenu
-          id="demo-customized-menu"
+          id="time-menu"
           MenuListProps={{
-            'aria-labelledby': 'demo-customized-button',
+            'aria-labelledby': 'time-button',
           }}
           anchorEl={anchorEl}
           open={open}

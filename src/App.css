@@ -14,4 +14,5 @@
   margin-top: 5.9rem;
   background-image: url("../src/images/landing-page-image.svg");
   background-size: cover;
+  background-position: center;
 }

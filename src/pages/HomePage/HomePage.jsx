@@ -6,9 +6,6 @@ import * as dogsApi from '../../utilities/dogs-api';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-// Material UI Icons
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
 
 const HomePage = ({handleAddDog}) => {
 
@@ -75,12 +72,12 @@ const HomePage = ({handleAddDog}) => {
       </div>
 
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button className="card__button" variant="outlined">
+        <button className="pass_button card__button">
           <p className="pass-or-like">Pass</p>
-        </Button>
-        <Button className="card__button" variant="outlined">
+        </button>
+        <button className="like__button card__button">
           <p className="pass-or-like">Like</p>
-        </Button>
+        </button>
       </Stack>
       
     </div>

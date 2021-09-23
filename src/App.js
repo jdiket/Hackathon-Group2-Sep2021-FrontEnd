@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import DogDetailPage from './pages/DogDetailPage/DogDetailPage';
@@ -9,22 +9,11 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
 
-  const [likedDogsArray, setLikedDogsArray] = useState([{_id:1},{_id:2},{_id:3}]);
+  let likedDogsArray = []
 
   const handleAddDog = (dogData) => {
-    console.log('added doggo', dogData)
-    setLikedDogsArray([...likedDogsArray, dogData])
-  }
-
-  const rejectDog = (dogData) => {
-    let filterDogArray = [...likedDogsArray];
-    filterDogArray = filterDogArray.filter((dog) => {
-      if(dog._id !== dogData._id) {
-        return dog;
-      }
-    })
-    console.log(filterDogArray)
-    setLikedDogsArray(filterDogArray)
+    likedDogsArray.push(dogData)
+    console.log(likedDogsArray)
   }
 
   return (
@@ -35,19 +24,15 @@ const App = () => {
       <Switch>
 
       <Route exact path="/">
-          <HomePage AddDogToLikedDogs={handleAddDog} />
+          <HomePage handleAddDog={handleAddDog} />
         </Route>
         <Route path="/bookmark">
-          <BookmarkPage  likedDogsArray={likedDogsArray} AddDogToLikedDogs={handleAddDog}/>
+          <BookmarkPage  likedDogsArray={likedDogsArray} handleAddDog={handleAddDog}/>
         </Route>
         <Route path="/details">
           <DogDetailPage></DogDetailPage>
         </Route>
 
-        {/* <Route exact path="/" component={HomePage} />
-        <Route path="/bookmark" component={BookmarkPage} />
-        <Route path="/details" component={DogDetailPage} />
-        <Redirect to="/" /> */}
       </Switch>
 
       <Footer />

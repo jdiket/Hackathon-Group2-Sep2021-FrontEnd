@@ -1,20 +1,23 @@
-import TinderCards from '../../components/TinderCards/TinderCards'
 import './bookmarkpage.css';
+import React, { useState } from 'react'
+import DetailCard from '../../components/DetailCard/DetailCard'
 
-const BookmarkPage = () => {
+const BookmarkPage = ({ likedDogsArray }) => {
+
+  const [bookmarkedDogsArray, setBookmarkedDogsArray] = useState(likedDogsArray)
+
+  console.log(likedDogsArray);
+
   return ( 
     <div className="BookmarkPage">
       <h1 className="header">Dogs You Like!</h1>
       <div className="card-container">
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
-        <TinderCards />
+        {likedDogsArray !== 0 ?
+          likedDogsArray.map((dogData) => {
+            return <DetailCard dogData={dogData} />
+          }):
+          'Go Get Dogs!'
+        }
       </div>
     </div>
    );

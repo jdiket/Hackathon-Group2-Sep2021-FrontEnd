@@ -9,7 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import Stack from '@mui/material/Stack';
 
 
-const DogDetailPage = () => {
+const DogDetailPage = ({ dogData }) => {
   const [ reserved, setReserved ] = useState("RESERVE")
   const [ numAdoptions, setNumAdoptions ] = useState(Math.floor(Math.random() * 10))
   const [ adoptionFee, setAdoptionFee ] = useState(Math.floor(Math.random() * 50) + 50)
@@ -24,28 +24,34 @@ const DogDetailPage = () => {
     <div className="dogdetailpage">
 
       <div className="detail__header">
-        <h1 className="detail__title">Dog Name</h1>
-        <p>breed | location</p>
+        <h1 className="detail__title">{dogData.name}</h1>
+        <p>{dogData.breed.map((breed) => breed + ` `)} | {dogData.location}</p>
       </div>
 
       <div className="detail__photos">
-        <div className="photo__main" style={{backgroundImage: `url(${dog})`}}/>
-        <div className="photo photo__2" style={{backgroundImage: `url(${dog})`}}/>
-        <div className="photo photo__3" style={{backgroundImage: `url(${dog})`}}/>
-        <div className="photo photo__4" style={{backgroundImage: `url(${dog})`}}/>
-        <div className="photo photo__5" style={{backgroundImage: `url(${dog})`}}/>
+        <div className="photo__main" style={{backgroundImage: `url(${dogData.photo[0]})`}}/>
+        <div className="photo photo__2" style={{backgroundImage: `url(${dogData.photo[1]})`}}/>
+        <div className="photo photo__3" style={{backgroundImage: `url(${dogData.photo[2]})`}}/>
+        <div className="photo photo__4" style={{backgroundImage: `url(${dogData.photo[3]})`}}/>
+        <div className="photo photo__5" style={{backgroundImage: `url(${dogData.photo[4]})`}}/>
       </div>
       
       <div className="detail__description">
         <div className="detail__info">
-          <h2>Basic Info</h2>
+          <h2>{dogData.vaccinated ? 'Vaccinated' :''}</h2>
+          <h2>{dogData.goodWithKids ? 'Good With Kids' :''}</h2>
+          <h2>{dogData.houseTrained ? 'House Trained' :''}</h2>
+          <h2>{dogData.goodWithDogs ? 'Good With Dogs' :''}</h2>
+          <h2>{dogData.weight}</h2>
+          <h2>{dogData.sex}</h2>
+          <h2>{dogData.color}</h2>
           <hr className="solid" />
         </div>
 
         <div className="detial__story">
           <h2>My Story</h2>
           <hr className="solid" />
-          <p>{story}</p>
+          <p>{dogData.description}</p>
         </div>
       </div>
       

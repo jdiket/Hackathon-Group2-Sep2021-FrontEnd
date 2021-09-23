@@ -1,4 +1,3 @@
-import './tindercards.css'
 import { useState } from 'react';
 import TinderCard from 'react-tinder-card'
 import dog from '../../images/example.jpeg'
@@ -14,24 +13,8 @@ import { CardActionArea } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-const onSwipe = (direction) => {
-  console.log('You swiped: ' + direction)
-}
-
-const onCardLeftScreen = (myIdentifier) => {
-  console.log(myIdentifier + ' left the screen')
-}
-
-const TinderCards = ({handleRejectDog, handleAddDog, dogData}) => {
+const DetailCard = ({dogData}) => {
   const [ showModal, setShowModal ] = useState(false)
-
-  const addDogHelper = () => {
-    handleAddDog(dogData);
-  }
-
-  const rejectDogHelper = () => {
-    handleRejectDog()
-  }
 
   const openModal = () => {
     console.log("modal clicked")
@@ -41,13 +24,7 @@ const TinderCards = ({handleRejectDog, handleAddDog, dogData}) => {
   return ( 
     <div className="TinderCard">
       {/* dog details page modal */}
-      <Modal dogData={dogData}  showModal={showModal} setShowModal={setShowModal}/>
-
-      <TinderCard
-        onSwipe={addDogHelper}
-        onCardLeftScreen={() => onCardLeftScreen('fooBar')}
-        preventSwipe={['right', 'left']}
-        > 
+      <Modal dogData={dogData} showModal={showModal} setShowModal={setShowModal}/>
          <Card className="card" sx={{ maxWidth: 345 }}>
           <CardActionArea>
             <CardMedia
@@ -81,10 +58,8 @@ const TinderCards = ({handleRejectDog, handleAddDog, dogData}) => {
             </CardContent>
           </CardActionArea>
         </Card>
-      </TinderCard>
-    
     </div>
    );
 }
  
-export default TinderCards;
+export default DetailCard;

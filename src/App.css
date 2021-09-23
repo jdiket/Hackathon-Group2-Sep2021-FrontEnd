@@ -10,9 +10,13 @@
   --light: #fafcfe;
 }
 
-.App {
-  margin-top: 5.9rem;
+body {
   background-image: url("../src/images/landing-page-image.svg");
   background-size: cover;
   background-position: center;
+  height: 88vh;
+}
+
+.App {
+  margin-top: 5.9rem;
 }

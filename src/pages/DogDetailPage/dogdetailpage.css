@@ -1,7 +1,111 @@
 .dogdetailpage {
-
+  margin-top: -50px;
+  display: grid;
+  grid-template-columns: [first] 50% [line2] auto [line3] 25% [end];
+  grid-template-rows: [start] 10% [row2] 250px [row3] auto [last];
+}
+.detail__header {
+  grid-column: first;
+  grid-row: start / 3;
+}
+.detail__photos {
+  grid-column: 1 / span 4;
+  grid-row: row2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 50%);
+}
+.photo {
+  margin: 5px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.photo__main {
+  background-size: cover;
+  background-position: center;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+.photo__2 {
+  grid-column: 3 / span 1;
+  grid-row: 2;
+  background-size: cover;
+  background-position: center;
+}
+.photo__3 {
+  grid-column: 4 / span 1;
+  grid-row: 2;
+  background-size: cover;
+  background-position: center;
+}
+.photo__4 {
+  grid-column: 3 / span 1;
+  grid-row: 1;
+  background-size: cover;
+  background-position: center;
+}
+.photo__5 {
+  grid-column: 4 / span 1;
+  grid-row: 1;
+  background-size: cover;
+  background-position: center;
+}
+.detail__description {
+  height: 800px;
+  padding-right: 30px;
+  grid-column: first / span 1;
+  grid-row: row3;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+/* Solid border */
+hr.solid {
+  border-top: 1px solid;
+  width: 90%;
+}
+.detail__info {
+  min-height: 100px;
+}
+.detail__story {
+  min-height: 100px;
 }
 
-.datePicker {
-  margin: 80px auto
+.detail__playdate {
+  grid-column: line2 / span 3;
+  grid-row: row3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.playdate__location {
+  display: flex;
+  align-self: center;
+  margin-bottom: 10px;
+}
+.playdate__schedule {
+  width: 90%;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: white;
+  text-align: left;
+}
+.button__reserve {
+  height: 35px;
+  width: 100%;
+}
+.playdate__adopt {
+  width: 90%;
+  margin: 10px auto;
+  padding: 0 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: white;
+  text-align: left;
+  line-height: 4em;
 }

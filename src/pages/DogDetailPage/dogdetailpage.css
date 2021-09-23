@@ -68,10 +68,22 @@ hr.solid {
   width: 90%;
 }
 .detail__info {
+  display: flex;
+  flex-wrap: wrap;
   min-height: 100px;
+}
+.tag {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 5px 10px;
+  background: white;
 }
 .detail__story {
   min-height: 100px;
+}
+.story__description {
+  margin-top: 10px;
 }
 
 .detail__playdate {

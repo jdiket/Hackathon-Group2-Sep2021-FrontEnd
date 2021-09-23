@@ -42,20 +42,22 @@ const DogDetailPage = ({ dogData }) => {
       
       <div className="detail__description">
         <div className="detail__info">
-          <h2>{dogData.vaccinated ? 'Vaccinated' :''}</h2>
-          <h2>{dogData.goodWithKids ? 'Good With Kids' :''}</h2>
-          <h2>{dogData.houseTrained ? 'House Trained' :''}</h2>
-          <h2>{dogData.goodWithDogs ? 'Good With Dogs' :''}</h2>
-          <h2>{dogData.weight}</h2>
-          <h2>{dogData.sex}</h2>
-          <h2>{dogData.color}</h2>
+          <h2 className="info__title">Basic Info</h2>
           <hr className="solid" />
+          {dogData.vaccinated && <p className="tag"> Vaccinated </p>}
+          {dogData.goodWithKids && <p className="tag"> Good With Kids </p>}
+          {dogData.houseTrained && <p className="tag"> House Trained</p>}
+          {dogData.goodWithdogs && <p className="tag"> Good With dogs</p>}
+          <p className="tag"> {dogData.weight} lbs </p>
+          <p className="tag"> {dogData.sex} </p>
+          <p className="tag"> {dogData.color} </p>
+          
         </div>
 
         <div className="detial__story">
           <h2>My Story</h2>
           <hr className="solid" />
-          <p>{dogData.description}</p>
+          <p className="story__description">{dogData.description}</p>
         </div>
       </div>
       

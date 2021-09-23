@@ -13,6 +13,5 @@ const DogDetailPage = () => {
     </div>
   );
 }
- 
 
 export default DogDetailPage;

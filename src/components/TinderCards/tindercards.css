@@ -1,7 +1,6 @@
 .card {
   margin: 30px auto;
 }
-
 .card__buttons {
   justify-content: center;
   margin: 10px auto;
@@ -9,7 +8,15 @@
 .card__button {
   width: 50%;
 }
+.pass-or-like {
+  font-size: larger;
+  font-weight: 800;
+}
 .card__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.card__content {
+  background-color: #E5F4FD;
 }

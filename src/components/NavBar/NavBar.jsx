@@ -4,24 +4,16 @@ import React from 'react';
 import {
   AppBar,
   Toolbar,
-  IconButton,
-  Typography,
-  useMediaQuery,
   Button,
   useScrollTrigger,
   Slide,
-  Menu,
-  MenuItem,
-  ListItemIcon,
   Container,
 } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import MessageIcon from "@material-ui/icons/Message";
-import { ClassNames } from '@emotion/react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +46,7 @@ export default function NavBar(props) {
   const classes = useStyles();
 
   return (
-    <nav class="navbar-shadow background-override">
+    <nav className="navbar-shadow background-override">
       <Container>
         <AppBar
           color="backgroundWhite">

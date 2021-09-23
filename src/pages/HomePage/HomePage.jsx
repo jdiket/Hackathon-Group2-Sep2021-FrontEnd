@@ -3,6 +3,13 @@ import './homepage.css';
 import { useState, useEffect } from 'react';
 import * as dogsApi from '../../utilities/dogs-api';
 
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
+// Material UI Icons
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
+
 const HomePage = () => {
 
   const [fadeState, setFadeState] = useState('arrow-fade-in-start') 
@@ -36,7 +43,6 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <h1> Home Page </h1>
       <div className="card-swipe-container">
         <div className={`left-arrow-container ${fadeState}`}>
         {'<-'} Swipe Left

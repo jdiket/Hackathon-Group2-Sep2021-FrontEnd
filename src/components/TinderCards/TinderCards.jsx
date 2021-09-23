@@ -1,4 +1,5 @@
 import './tindercards.css'
+import { Link } from 'react-router-dom';
 import TinderCard from 'react-tinder-card'
 import dog from '../../images/example.jpeg'
 
@@ -41,12 +42,16 @@ const TinderCards = () => {
               image={dog}
               alt="dog"
             />
-            <CardContent>
+            <CardContent className="card__content">
               <div className="card__header">
                 <Typography gutterBottom variant="h5" component="div">
                   Brandy
                 </Typography>
-                <Button variant="outlined">more info</Button>
+
+                <Link to="/details">
+                  <Button variant="outlined">more info</Button>
+                </Link>
+                
               </div>
               <Typography variant="body2" color="text.secondary">
                 Golden Retriever
@@ -64,8 +69,12 @@ const TinderCards = () => {
 
  
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button className="card__button" variant="outlined"><CloseIcon/></Button>
-        <Button className="card__button" variant="outlined"><CheckIcon/></Button>
+        <Button className="card__button" variant="outlined">
+          <p className="pass-or-like">Pass</p>
+        </Button>
+        <Button className="card__button" variant="outlined">
+          <p className="pass-or-like">Like</p>
+        </Button>
       </Stack>
     
     </div>

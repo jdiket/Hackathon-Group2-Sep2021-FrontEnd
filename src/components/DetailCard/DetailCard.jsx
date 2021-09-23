@@ -40,7 +40,7 @@ const DetailCard = ({dogData}) => {
                 </Typography>
 
                 <button 
-                  className="button"
+                  className="button__more"
                   onClick={openModal}
                 >More Info
                 </button>

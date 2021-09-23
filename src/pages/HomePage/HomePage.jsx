@@ -43,6 +43,7 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
+
       <div className="card-swipe-container">
         <div className={`left-arrow-container ${fadeState}`}>
         {'<-'} Swipe Left
@@ -52,6 +53,16 @@ const HomePage = () => {
           Swipe Right {'->'}
         </div>
       </div>
+
+      <Stack className="card__buttons" spacing={4} direction="row">
+        <Button className="card__button" variant="outlined">
+          <p className="pass-or-like">Pass</p>
+        </Button>
+        <Button className="card__button" variant="outlined">
+          <p className="pass-or-like">Like</p>
+        </Button>
+      </Stack>
+      
     </div>
   );
 }

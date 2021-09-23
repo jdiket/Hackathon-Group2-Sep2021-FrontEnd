@@ -1,7 +1,8 @@
 import './tindercards.css'
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import TinderCard from 'react-tinder-card'
 import dog from '../../images/example.jpeg'
+import Modal from '../Modal/Modal'
 
 // Material UI Imports
 import Card from '@mui/material/Card';
@@ -13,11 +14,6 @@ import { CardActionArea } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-// Material UI Icons
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
-
-
 const onSwipe = (direction) => {
   console.log('You swiped: ' + direction)
 }
@@ -27,8 +23,18 @@ const onCardLeftScreen = (myIdentifier) => {
 }
 
 const TinderCards = () => {
+  const [ showModal, setShowModal ] = useState(false)
+
+  const openModal = () => {
+    console.log("modal clicked")
+    setShowModal(prev => !prev)
+  }
+  
   return ( 
     <div className="TinderCard">
+      {/* dog details page modal */}
+      <Modal showModal={showModal} setShowModal={setShowModal}/>
+
       <TinderCard
         onSwipe={onSwipe}
         onCardLeftScreen={() => onCardLeftScreen('fooBar')}
@@ -48,9 +54,15 @@ const TinderCards = () => {
                   Brandy
                 </Typography>
 
-                <Link to="/details">
-                  <Button variant="outlined">more info</Button>
-                </Link>
+
+                <button 
+                  className="button"
+                  onClick={openModal}
+                >More Info
+                </button>
+
+                {/* <button className="button__more-info">more info</button> */}
+                
                 
               </div>
               <Typography variant="body2" color="text.secondary">
@@ -66,16 +78,6 @@ const TinderCards = () => {
           </CardActionArea>
         </Card>
       </TinderCard>
-
- 
-      <Stack className="card__buttons" spacing={4} direction="row">
-        <Button className="card__button" variant="outlined">
-          <p className="pass-or-like">Pass</p>
-        </Button>
-        <Button className="card__button" variant="outlined">
-          <p className="pass-or-like">Like</p>
-        </Button>
-      </Stack>
     
     </div>
    );

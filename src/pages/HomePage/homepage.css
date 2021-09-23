@@ -1,0 +1,63 @@
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  min-width: 800px;
+}
+
+.card-swipe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.left-arrow-container, .right-arrow-container {
+  font-size: 24px;
+  margin: 0 5rem;
+}
+
+.arrow-fade-in-start {
+  opacity: 0;
+}
+
+.arrow-fade-in-end {
+  opacity: 1;
+  transition: all 450ms linear;
+}
+
+.arrow-hidden {
+  opacity: 0;
+  transition: all 250ms linear 4s;
+}
+
+.card {
+  margin: auto;
+}
+.card__buttons {
+  justify-content: center;
+  margin: 10px auto;
+}
+.card__button {
+	align-self: center;
+	padding: 10px;
+	margin: 2px;
+	height: auto;
+	width: 15vw;
+	border: 1px solid;
+	border-radius: 4px;
+	outline: none;
+	color: black;
+	cursor: pointer;
+}
+.like__button {
+  background-color: rgba(69, 123, 234, 1);
+}
+.pass__button {
+  background-color: rgba(248, 242, 229, 1);
+}
+.pass-or-like {
+  font-size: larger;
+  font-weight: 800;
+}

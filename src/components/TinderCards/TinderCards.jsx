@@ -1,4 +1,5 @@
 import './tindercards.css'
+import { useLayoutEffect } from 'react'
 import TinderCard from 'react-tinder-card'
 import dog from '../../images/example.jpeg'
 
@@ -16,16 +17,35 @@ import Button from '@mui/material/Button';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 
-
-const onSwipe = (direction) => {
-  console.log('You swiped: ' + direction)
-}
+import * as locationsApi from '../../utilities/location-api'
 
 const onCardLeftScreen = (myIdentifier) => {
   console.log(myIdentifier + ' left the screen')
 }
 
-const TinderCards = () => {
+let locale = '';
+
+const TinderCards = ({dogData, AddDogToLikedDogs}) => {
+
+  useLayoutEffect(() => {
+    const getLocation = async () => {
+      const location = await locationsApi.getLocationById(dogData.location)
+      locale = location.name;
+    }
+    getLocation();
+  })
+
+  const onSwipe = (direction,dogData) => {
+    console.log('You swiped: ' + direction)
+    if(direction === 'right') {
+      handleAddDoggo(dogData)
+    }
+  }
+
+  const handleAddDoggo = (doggo) => {
+    AddDogToLikedDogs(doggo);
+  }
+
   return ( 
     <div className="TinderCard">
       <TinderCard
@@ -38,21 +58,21 @@ const TinderCards = () => {
             <CardMedia
               component="img"
               height="240"
-              image={dog}
+              image={dogData.photo}
               alt="dog"
             />
             <CardContent>
               <div className="card__header">
                 <Typography gutterBottom variant="h5" component="div">
-                  Brandy
+                {dogData.name}
                 </Typography>
                 <Button variant="outlined">more info</Button>
               </div>
               <Typography variant="body2" color="text.secondary">
-                Golden Retriever
+                {dogData.breed.map((breed) => breed)}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Brooklyn, NY
+                {locale}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Loves long walks on the beach and the fresh of a new tennis ball
@@ -65,7 +85,7 @@ const TinderCards = () => {
  
       <Stack className="card__buttons" spacing={4} direction="row">
         <Button className="card__button" variant="outlined"><CloseIcon/></Button>
-        <Button className="card__button" variant="outlined"><CheckIcon/></Button>
+        <Button onClick={AddDogToLikedDogs} className="card__button" variant="outlined"><CheckIcon/></Button>
       </Stack>
     
     </div>

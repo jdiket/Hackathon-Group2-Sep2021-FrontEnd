@@ -6,10 +6,12 @@ import * as dogsApi from '../../utilities/dogs-api';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
+
 // Material UI Icons
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import { Deck } from '@material-ui/icons';
+
 
 const HomePage = ({ handleAddDog, handleRejectDog }) => {
 
@@ -84,12 +86,14 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
       </div>
 
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button onClick={() => removeDog(dogsDeck[dogIndex])} className="card__button" variant="outlined">
+
+        <button  onClick={() => removeDog(dogsDeck[dogIndex])} className="pass_button card__button">
           <p className="pass-or-like">Pass</p>
-        </Button>
-        <Button className="card__button" variant="outlined">
+        </button>
+        <button className="like__button card__button">
           <p onClick={() => addDogAndRemove(dogsDeck[dogIndex])} className="pass-or-like">Like</p>
-        </Button>
+        </button>
+        
       </Stack>
       
     </div>

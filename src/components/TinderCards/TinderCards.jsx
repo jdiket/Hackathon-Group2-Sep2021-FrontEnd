@@ -64,9 +64,10 @@ const TinderCards = ({addDogAndRemove, dogData, removeDog}) => {
                 </Typography>
 
                 <button 
-                  className="button"
+                  className="button__more"
                   onClick={openModal}
-                >More Info
+                ><p className="more__text">More Info</p>
+                  
                 </button>
 
               </div>

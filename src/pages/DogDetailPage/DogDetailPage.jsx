@@ -15,9 +15,13 @@ const DogDetailPage = ({ dogData }) => {
   const [ adoptionFee, setAdoptionFee ] = useState(Math.floor(Math.random() * 50) + 50)
   const [ story, setStory ] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis mattis aliquam faucibus purus in. Diam quis enim lobortis scelerisque fermentum.")
 
-  const handleClick = () => {
+  const handleReserveClick = () => {
     setReserved("Awaiting Confirmation");
     setNumAdoptions(numAdoptions + 1);
+  }
+
+  const handleAdoptionClick = () => {
+    
   }
 
   return (  
@@ -71,7 +75,7 @@ const DogDetailPage = ({ dogData }) => {
 
           <button 
             className="button__reserve"
-            onClick={handleClick}
+            onClick={handleReserveClick}
             > {reserved}
           </button>
         </div>
@@ -80,6 +84,12 @@ const DogDetailPage = ({ dogData }) => {
           <h2 className="adopt__header">Adopt Me!</h2>
           <p>{numAdoptions} of people want to take me home!</p>
           <p>${adoptionFee} adoption fee</p>
+          
+          <button 
+            className="button__reserve"
+            onClick={handleAdoptionClick}
+            > Adoption Form
+          </button>
         </div>
 
       </div>

@@ -101,11 +101,11 @@ hr.solid {
 }
 .playdate__adopt {
   width: 90%;
-  margin: 10px auto;
-  padding: 0 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
   border: 1px solid;
   border-radius: 4px;
   background-color: white;
   text-align: left;
-  line-height: 4em;
+  line-height: 3em;
 }

@@ -40,7 +40,22 @@
   margin: 10px auto;
 }
 .card__button {
-  width: 50%;
+	align-self: center;
+	padding: 10px;
+	margin: 2px;
+	height: auto;
+	width: 15vw;
+	border: 1px solid;
+	border-radius: 4px;
+	outline: none;
+	color: black;
+	cursor: pointer;
+}
+.like__button {
+  background-color: rgba(69, 123, 234, 1);
+}
+.pass__button {
+  background-color: rgba(248, 242, 229, 1);
 }
 .pass-or-like {
   font-size: larger;

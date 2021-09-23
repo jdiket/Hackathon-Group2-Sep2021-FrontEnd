@@ -9,18 +9,24 @@ import Button from '@mui/material/Button';
 // Material UI Icons
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
+import { Deck } from '@material-ui/icons';
 
-const HomePage = ({handleAddDog}) => {
+const HomePage = ({ handleAddDog, handleRejectDog }) => {
 
   const [fadeState, setFadeState] = useState('arrow-fade-in-start');
   const [dogsDeck, setDogsDeck] = useState([]);
+  const [dogIndex, setDogIndex] = useState(0);
+  const [currentDog, setCurrentDog] = useState(<></>);
+  const tinderCard = (<></>)
 
   //Just for now, since we have a small database, I am going to fetch all the doggies.
   useEffect(() => {
     const getAllDogs = async () => {
       const doggies = await dogsApi.getAllDogs();
-      console.log(doggies.data);
+      console.log('DATER', doggies.data);
+      console.log('why')
       setDogsDeck(doggies.data);
+      // setCurrentDog(<TinderCards key={doggies.data[0].id} dogData={doggies.data[0]} handleRejectDog={handleRejectDog} addDogAndRemove={addDogAndRemove} />)
     }
     getAllDogs();
 
@@ -40,22 +46,25 @@ const HomePage = ({handleAddDog}) => {
     hideArrow();
   },[]);
 
-  const handleRejectDog = (dogData) => {
-    const filterDogDeck = [...dogsDeck];
-    filterDogDeck.filter((dog) => {
-      if (dog.id !== dogData.id) {
-        return dog;
-      }
-    })
-    setDogsDeck(filterDogDeck)
+  const addDogAndRemove = (dogData) => {
+    console.log('swiped')
+    console.log(dogsDeck)
+    handleAddDog(dogData);
+    if(dogIndex < dogsDeck.length - 1) {
+      setDogIndex(dogIndex + 1)
+    } else {
+      setDogIndex(0);
+    }
   }
 
-  // const changeDog = (id) => {
-  //   dogsData.filter(() => {
-  //     return <TinderCards dogData={dogData}  />
-  //   })
-  // }
-
+  const removeDog = () => {
+    if(dogIndex < dogsDeck.length - 1) {
+      setDogIndex(dogIndex + 1)
+    } else {
+      setDogIndex(0);
+    }
+  }
+  
   return (
     <div className="HomePage">
 
@@ -63,23 +72,23 @@ const HomePage = ({handleAddDog}) => {
         <div className={`left-arrow-container ${fadeState}`}>
         {'<-'} Swipe Left
         </div>
-        {
-          dogsDeck.map((dogData) => {
-            return <TinderCards key={dogData.id} dogData={dogData} handleRejectDog={handleRejectDog} handleAddDog={handleAddDog} />
-          })
-        }
-        {/* <TinderCards /> */}
+            {dogsDeck.length !== 0 ?
+            <TinderCards key={dogsDeck[dogIndex].id} removeDog={removeDog} dogData={dogsDeck[dogIndex]} handleRejectDog={handleRejectDog} addDogAndRemove={addDogAndRemove} />
+            // currentDog
+            :
+            ""
+            }
         <div className={`right-arrow-container arrow ${fadeState}`}>
           Swipe Right {'->'}
         </div>
       </div>
 
       <Stack className="card__buttons" spacing={4} direction="row">
-        <Button className="card__button" variant="outlined">
+        <Button onClick={() => removeDog(dogsDeck[dogIndex])} className="card__button" variant="outlined">
           <p className="pass-or-like">Pass</p>
         </Button>
         <Button className="card__button" variant="outlined">
-          <p className="pass-or-like">Like</p>
+          <p onClick={() => addDogAndRemove(dogsDeck[dogIndex])} className="pass-or-like">Like</p>
         </Button>
       </Stack>
       

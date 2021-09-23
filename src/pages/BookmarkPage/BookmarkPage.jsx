@@ -1,12 +1,10 @@
 import './bookmarkpage.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DetailCard from '../../components/DetailCard/DetailCard'
 
 const BookmarkPage = ({ likedDogsArray }) => {
 
   const [bookmarkedDogsArray, setBookmarkedDogsArray] = useState(likedDogsArray)
-
-  console.log(likedDogsArray);
 
   return ( 
     <div className="BookmarkPage">

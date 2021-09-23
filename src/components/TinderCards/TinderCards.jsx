@@ -22,15 +22,16 @@ const onCardLeftScreen = (myIdentifier) => {
   console.log(myIdentifier + ' left the screen')
 }
 
-const TinderCards = ({handleRejectDog, handleAddDog, dogData}) => {
+const TinderCards = ({addDogAndRemove, dogData, removeDog}) => {
   const [ showModal, setShowModal ] = useState(false)
 
-  const addDogHelper = () => {
-    handleAddDog(dogData);
-  }
-
-  const rejectDogHelper = () => {
-    handleRejectDog()
+  const changeDogHelper = (direction) => {
+    if(direction === 'right') {
+      addDogAndRemove(dogData);
+    }
+    if(direction === 'left') {
+      removeDog();
+    }
   }
 
   const openModal = () => {
@@ -44,7 +45,7 @@ const TinderCards = ({handleRejectDog, handleAddDog, dogData}) => {
       <Modal dogData={dogData}  showModal={showModal} setShowModal={setShowModal}/>
 
       <TinderCard
-        onSwipe={addDogHelper}
+        onSwipe={changeDogHelper}
         onCardLeftScreen={() => onCardLeftScreen('fooBar')}
         preventSwipe={['right', 'left']}
         > 

@@ -28,7 +28,6 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
       console.log('DATER', doggies.data);
       console.log('why')
       setDogsDeck(doggies.data);
-      // setCurrentDog(<TinderCards key={doggies.data[0].id} dogData={doggies.data[0]} handleRejectDog={handleRejectDog} addDogAndRemove={addDogAndRemove} />)
     }
     getAllDogs();
 
@@ -75,7 +74,9 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
         {'<-'} Swipe Left
         </div>
             {dogsDeck.length !== 0 ?
-            <TinderCards key={dogsDeck[dogIndex].id} removeDog={removeDog} dogData={dogsDeck[dogIndex]} handleRejectDog={handleRejectDog} addDogAndRemove={addDogAndRemove} />
+            dogsDeck.map((dogData) => {
+              return <TinderCards key={dogData.id} removeDog={removeDog} dogData={dogData} handleRejectDog={handleRejectDog} addDogAndRemove={addDogAndRemove} />
+            })
             // currentDog
             :
             ""
@@ -87,11 +88,11 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
 
       <Stack className="card__buttons" spacing={4} direction="row">
 
-        <button  onClick={() => removeDog(dogsDeck[dogIndex])} className="pass_button card__button">
+        <button  onClick={() => removeDog()} className="pass_button card__button">
           <p className="pass-or-like">Pass</p>
         </button>
         <button className="like__button card__button">
-          <p onClick={() => addDogAndRemove(dogsDeck[dogIndex])} className="pass-or-like">Like</p>
+          <p onClick={() => addDogAndRemove()} className="pass-or-like">Like</p>
         </button>
         
       </Stack>

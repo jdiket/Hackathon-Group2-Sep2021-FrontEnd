@@ -47,42 +47,43 @@ const TinderCards = ({addDogAndRemove, dogData, removeDog}) => {
       <TinderCard
         onSwipe={changeDogHelper}
         onCardLeftScreen={() => onCardLeftScreen('fooBar')}
-        preventSwipe={['right', 'left']}
+        preventSwipe={['up', 'down']}
         > 
-         <Card className="card" sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="240"
-              image={dogData.photo[0]}
-              alt="dog"
-            />
-            <CardContent className="card__content">
-              <div className="card__header">
-                <Typography gutterBottom variant="h5" component="div">
-                  {dogData.name}
+        <div className="card-phantom"></div>
+              <span className="card__container">
+           <Card className="card" sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="240"
+                image={dogData.photo[0]}
+                alt="dog"
+              />
+              <CardContent className="card__content">
+                <div className="card__header">
+                  <Typography gutterBottom variant="h5" component="div">
+                    {dogData.name}
+                  </Typography>
+                  <button
+                    className="button__more"
+                    onClick={openModal}
+                  ><p className="more__text">More Info</p>
+           
+                  </button>
+                </div>
+                <Typography variant="body2" color="text.secondary">
+                  {dogData.breed.map((breed) => breed + ` `)}
                 </Typography>
-
-                <button 
-                  className="button__more"
-                  onClick={openModal}
-                ><p className="more__text">More Info</p>
-                  
-                </button>
-
-              </div>
-              <Typography variant="body2" color="text.secondary">
-                {dogData.breed.map((breed) => breed + ` `)}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {dogData.location}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {dogData.description.substring(0,40)}...
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+                <Typography variant="body2" color="text.secondary">
+                  {dogData.location}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {dogData.description.substring(0,40)}...
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+                   </Card>
+         </span>
       </TinderCard>
     
     </div>

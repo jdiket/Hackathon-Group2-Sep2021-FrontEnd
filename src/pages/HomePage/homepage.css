@@ -2,15 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  padding-top: 8rem;
   min-width: 800px;
 }
 
 .card-swipe-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  height: 425px;
 }
 
 .left-arrow-container, .right-arrow-container {
@@ -23,7 +20,7 @@
 }
 
 .arrow-fade-in-end {
-  opacity: 1;
+  opacity: 0;
   transition: all 450ms linear;
 }
 

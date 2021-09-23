@@ -1,5 +1,12 @@
 .card {
-  margin: 30px auto;
+  position: relative;
+  background-color: #fff;
+  width: 80vw;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 30%);
+  border-radius: 20px;
+  background-size: cover;
+  background-position:center;
+
 }
 .card__header {
   display: flex;
@@ -19,3 +26,14 @@
 .more__text {
   font-weight: 500;
 }
+/* 
+.card-phantom{
+  height: 450px;
+} */
+
+.card__container {
+  position: absolute;
+}
+
+/* max-width: 260px;
+height: 300px; */

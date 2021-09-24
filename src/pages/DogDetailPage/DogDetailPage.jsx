@@ -13,7 +13,6 @@ const DogDetailPage = ({ dogData }) => {
   const [ reserved, setReserved ] = useState("RESERVE")
   const [ numAdoptions, setNumAdoptions ] = useState(Math.floor(Math.random() * 10))
   const [ adoptionFee, setAdoptionFee ] = useState(Math.floor(Math.random() * 50) + 50)
-  const [ story, setStory ] = useState("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis mattis aliquam faucibus purus in. Diam quis enim lobortis scelerisque fermentum.")
 
   const handleReserveClick = () => {
     setReserved("Awaiting Confirmation");
@@ -64,7 +63,7 @@ const DogDetailPage = ({ dogData }) => {
       <div className="detail__playdate">
         <div className="playdate__location">
           <PersonIcon />
-          Shelter Location
+          {dogData.location}
         </div>
 
         <div className="playdate__schedule">

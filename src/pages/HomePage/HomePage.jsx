@@ -19,20 +19,20 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
     }
     getAllDogs();
 
-    const changeFadeStateOnLoad =() => {
-      setTimeout(() => {
-        setFadeState('arrow-fade-in-end');
-      },250)
-    }
+    // const changeFadeStateOnLoad =() => {
+    //   setTimeout(() => {
+    //     setFadeState('arrow-fade-in-end');
+    //   },250)
+    // }
   
-    const hideArrow = () => {
-      setTimeout(() => {
-        setFadeState('arrow-hidden');
-      },2000)
-    }
+    // const hideArrow = () => {
+    //   setTimeout(() => {
+    //     setFadeState('arrow-hidden');
+    //   },2000)
+    // }
   
-    changeFadeStateOnLoad();
-    hideArrow();
+    // changeFadeStateOnLoad();
+    // hideArrow();
   },[]);
 
   const addDogAndRemove = (dogData) => {

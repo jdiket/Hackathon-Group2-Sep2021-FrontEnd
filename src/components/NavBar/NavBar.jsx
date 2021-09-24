@@ -51,7 +51,7 @@ export default function NavBar(props) {
         <AppBar
           color="backgroundWhite">
           <Toolbar>
-            <h1 className={classes.root}>Dog Day Afternoon</h1>
+            <h1 className={classes.root}>Dog Day</h1>
             <div style={{ marginRight: "2rem" }}>
               <Button
                 variant="text"

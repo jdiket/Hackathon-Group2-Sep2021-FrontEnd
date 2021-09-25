@@ -1,6 +1,6 @@
 import './bookmarkpage.css';
-import React, { useState, useEffect } from 'react'
-import DetailCard from '../../components/DetailCard/DetailCard'
+import React, { useState, useEffect } from 'react';
+import DetailCard from '../../components/DetailCard/DetailCard';
 
 const BookmarkPage = ({ likedDogsArray }) => {
 

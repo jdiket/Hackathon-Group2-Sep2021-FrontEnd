@@ -14,6 +14,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import MessageIcon from "@material-ui/icons/Message";
+import LogoutIcon from '@mui/icons-material/Logout';
+import { logOut } from '../../utilities/services/users-service';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +44,12 @@ function HideOnScroll(props) {
 }
 
 export default function NavBar(props) {
+
+  const handleLogOut = () => {
+    console.log(props)
+    logOut();
+    props.setUser(null)
+  }
 
   const classes = useStyles();
 
@@ -76,6 +84,15 @@ export default function NavBar(props) {
                 color="default"
               >
                 <HomeIcon />
+              </Button>
+              <Button
+                onClick={handleLogOut}
+                variant="text"
+                component={Link}
+                to="/"
+                color="default"
+              >
+                <LogoutIcon />
               </Button>
             </div>
           </Toolbar>

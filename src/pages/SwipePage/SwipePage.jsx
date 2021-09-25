@@ -1,11 +1,11 @@
+import './swipepage.css';
 import TinderCards from '../../components/TinderCards/TinderCards';
-import './homepage.css';
 import { useState, useEffect } from 'react';
-import * as dogsApi from '../../utilities/dogs-api';
+import * as dogsApi from '../../utilities/apis/dogs-api';
 
 import Stack from '@mui/material/Stack';
 
-const HomePage = ({ handleAddDog, handleRejectDog }) => {
+const SwipePage = ({ handleAddDog, handleRejectDog }) => {
 
   const [fadeState, setFadeState] = useState('arrow-fade-in-start');
   const [dogsDeck, setDogsDeck] = useState([]);
@@ -53,7 +53,7 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
   }
   
   return (
-    <div className="HomePage">
+    <div className="SwipePage">
 
       <div className="card-swipe-container">
         <div className={`left-arrow-container ${fadeState}`}>
@@ -84,4 +84,4 @@ const HomePage = ({ handleAddDog, handleRejectDog }) => {
   );
 }
 
-export default HomePage;
+export default SwipePage;

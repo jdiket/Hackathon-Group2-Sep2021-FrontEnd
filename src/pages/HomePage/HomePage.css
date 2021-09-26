@@ -1,0 +1,29 @@
+.HomePage {
+}
+
+/* 
+.swipe__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-arrow-container, .right-arrow-container {
+  font-size: 24px;
+  margin: 0 5rem;
+}
+
+.arrow-fade-in-start {
+  opacity: 0;
+}
+
+.arrow-fade-in-end {
+  opacity: 1;
+  transition: all 450ms linear;
+}
+
+.arrow-hidden {
+  opacity: 0;
+  transition: all 250ms linear 4s;
+}
+*/

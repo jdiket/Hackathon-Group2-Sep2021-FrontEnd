@@ -1,20 +1,24 @@
-/* .NavBar {
-  padding: 20px;
+.NavBar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-}
-.NavBar .link {
-  margin-left: auto;
-} */
-
-.navbar-shadow {
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  background-color: whitesmoke;
+  border-bottom: 1px solid #f9f9f9;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 
+    0px 3px 1px -1px rgb(0 0 0 / 20%), 
+    0px 2px 1px 0px rgb(0 0 0 / 14%), 
+    0px 2px 3px 0px rgb(0 0 0 / 12%);
+  height: 10vh;
   width: 100%;
+  min-width: 335px;
 }
+.nav__header {
 
-.background-override {
-  background-color: white;
+}
+.nav__icons {
+  margin-right: 2em;
+}
+.icon__button {
+  margin: auto 1vw;
 }

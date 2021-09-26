@@ -3,7 +3,7 @@
   border-top: 1px solid #0E0E2C;
   text-align: center;
   padding: 20px;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   height: 15px;

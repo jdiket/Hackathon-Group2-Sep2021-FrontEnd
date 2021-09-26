@@ -1,49 +1,49 @@
 import './App.css';
-import { useState, useEffect } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { useState } from 'react'
+import { Route, Switch } from 'react-router-dom';
 import AuthPage from './pages/AuthPage/AuthPage'
+import { LikedDogsContext } from './utilities/LikedDogsContext';
 import NavBar from './components/NavBar/NavBar';
 import DogDetailPage from './pages/DogDetailPage/DogDetailPage';
-import SwipePage from './pages/SwipePage/SwipePage';
 import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
 import Footer from './components/Footer/Footer';
+import HomePage from './pages/HomePage/HomePage'
 import { getUser } from './utilities/services/users-service'
 
 const App = () => {
-
   const [user, setUser] = useState(getUser());
-
-  let likedDogsArray = []
-
-  const handleAddDog = (dogData) => {
-    likedDogsArray.push(dogData)
-    console.log(likedDogsArray)
-  }
+  let likedDogs = []
 
   return (
-    <>
-    { user ?
-      <>
-        <NavBar user={user} setUser={setUser} />
+    <div>
+      {/* { user ? ( */}
         <div className="App">
-          <Switch>
-          <Route exact path="/">
-              <SwipePage handleAddDog={handleAddDog} />
-            </Route>
-            <Route path="/bookmark">
-              <BookmarkPage  likedDogsArray={likedDogsArray} handleAddDog={handleAddDog}/>
-            </Route>
-            <Route path="/details">
-              <DogDetailPage></DogDetailPage>
-            </Route>
-          </Switch>
+          <NavBar user={user} setUser={setUser} />
+          <div className="Main">
+            <Switch>
+              
+              {/* Landing Page */}
+
+              <LikedDogsContext.Provider value={likedDogs}>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/bookmark" component={BookmarkPage} />
+              </LikedDogsContext.Provider>
+
+              <Route path="/detail/:id" component={DogDetailPage} />
+
+              {/* chat component */}
+              
+              {/* not found page */}
+              
+            </Switch>
+          </div>
+
           <Footer />
         </div>
-      </>
-      :
-      <AuthPage setUser={setUser} />
-    }
-    </>
+      {/* ) : (
+        <AuthPage setUser={setUser} />
+      )} */}
+    </div> 
   );
 }
 

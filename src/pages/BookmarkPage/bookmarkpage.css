@@ -1,13 +1,44 @@
-.header {
+.BookmarkPage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5em;
     text-align: center;
-    margin: 2rem;
+    width: 100vw;
+    overflow: hidden;
 }
+.bookmark__header {
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: 80%;
-    margin-top: 2rem;
-    margin: 0 auto;
-    grid-gap:3rem;
+}
+.bookmark__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    margin-top: 1.5em;
+}
+.bookmark__card {
+    margin: 10px;
+    background-color: #fff;
+    width: 30vw;
+    min-width: 280px;
+    height: 40vh;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+}
+.bookmark__photo {
+    width: 100%;
+    height: 75%;
+    background-size: cover;
+    background-position: top;
+    border-radius: 20px 20px 0 0;
+    top: 0;
+    left: 0;
+}
+.bookmark__text {
+    text-align: left;
+    margin: auto 10px;
+    font-size: small;
+    line-height: 1.25em;
 }

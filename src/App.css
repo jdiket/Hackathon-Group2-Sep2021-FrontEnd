@@ -10,13 +10,15 @@
   --light: #fafcfe;
 }
 
-body {
-  background-image: url("../src/images/landing-page-image.svg");
-  background-size: cover;
-  background-position: center;
-  height: 88vh;
+.App {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.App {
-  margin-top: 5.9rem;
+.Main {
+  height: 75vh;
 }
+
+
+

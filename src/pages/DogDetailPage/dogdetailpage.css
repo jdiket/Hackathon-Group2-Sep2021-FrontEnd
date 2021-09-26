@@ -1,5 +1,7 @@
 .dogdetailpage {
   margin-top: -50px;
+}
+.dog__detail__container {
   display: grid;
   grid-template-columns: [first] 50% [line2] auto [line3] 25% [end];
   grid-template-rows: [start] 10% [row2] 250px [row3] auto [last];

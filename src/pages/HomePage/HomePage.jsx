@@ -1,4 +1,4 @@
-import './homepage.css';
+import './HomePage.css';
 import React, { useState } from 'react';
 import DogCards from '../../components/DogCards/DogCards';
 import useAxios from '../../utilities/useAxios';

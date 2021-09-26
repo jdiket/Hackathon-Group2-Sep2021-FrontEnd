@@ -16,11 +16,12 @@ const App = () => {
 
   return (
     <div>
-      { user ? (
+      {/* { user ? ( */}
         <div className="App">
           <NavBar user={user} setUser={setUser} />
           <div className="Main">
             <Switch>
+              
               {/* Landing Page */}
 
               <LikedDogsContext.Provider value={likedDogs}>
@@ -39,9 +40,9 @@ const App = () => {
 
           <Footer />
         </div>
-      ) : (
+      {/* ) : (
         <AuthPage setUser={setUser} />
-      )}
+      )} */}
     </div> 
   );
 }

@@ -14,11 +14,13 @@
   min-width: 335px;
 }
 .nav__header {
-
+ margin-left: 2vw;
 }
 .nav__icons {
-  margin-right: 2em;
+  margin-right: 1.5em;
+  display: flex;
 }
+
 .icon__button {
-  margin: auto 1vw;
+  margin: auto .8vw;
 }

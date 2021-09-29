@@ -26,28 +26,46 @@ const NavBar = (props) => {
       </div>
             
       <div className="nav__icons">
-        <IconButton>
-          <Link to="/bookmark">
-            <BookmarkIcon className="icon__button" />
-          </Link>
-        </IconButton>
-        <IconButton>
-          <Link to="/">
-            <MessageIcon className="icon__button" />
-          </Link>
-        </IconButton>
-        <IconButton>
-          <Link to="/">
-            <HomeIcon className="icon__button" />
-          </Link>
-        </IconButton>
-        <IconButton
-          onClick={handleLogOut}
-          component={Link}
-          to="/"
-        >
-          <LogoutIcon />
-        </IconButton>
+
+        <div className="icon__button">
+          <IconButton
+            component={Link}
+            to="/"
+          >
+            <BookmarkIcon/>
+          </IconButton>
+        </div>
+        
+        <div className="icon__button">
+          <IconButton
+            component={Link}
+            to="/"
+          >
+            <MessageIcon/>
+          </IconButton>
+        </div>
+
+        <div className="icon__button">
+          <IconButton
+            className="icon__button"
+            component={Link}
+            to="/"
+          >
+            <HomeIcon/>
+          </IconButton>
+        </div>
+
+        <div className="icon__button">
+          <IconButton
+            className="icon__button"
+            onClick={handleLogOut}
+            component={Link}
+            to="/"
+          >
+            <LogoutIcon />
+          </IconButton>
+        </div>
+
       </div>
     </nav>
   );

@@ -1,35 +1,29 @@
 .Modal {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	overflow: auto;
   z-index: 2;
+	overflow-y: scroll;
 }
 .modal__contents {
-	display: flex;
-	flex-direction: column;
-	background-color: #F3D9DA;
+	background: #FFFFFF;
 	text-align: justify;
-	width: 80%;
-	border-radius: 5px;
+	width: 71.39%;
+	border-radius: 20px;
 	margin: 100px auto;
 	box-shadow: 0 3px 3px black;
-	padding: 4% 6%;
+	padding: 2% 1%;
+
 }
-.modal__footer {
-	text-align: right;
+.contents__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .modal__button {
-	align-self: flex-end;
-	padding: 10px;
-	margin: 2px;
-	height: auto;
-	width: 120px;
-	border: 1px solid;
-	border-radius: 4px;
-	outline: none;
+	align-self: flex-start;
 	color: black;
 	cursor: pointer;
 	z-index: 5;

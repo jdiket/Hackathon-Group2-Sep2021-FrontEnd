@@ -67,7 +67,7 @@ const DogCards = ({ dogDeck }) => {
                   <button 
                     className={"more__button"}
                     onClick={() => openModal(dog)}
-                  > modal
+                  > View More
                   </button>
                 </div>
                 <div className="content__text">

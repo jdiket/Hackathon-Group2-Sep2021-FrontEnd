@@ -12,16 +12,20 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export const NavBar = (props) => {
   const icons = [
     {
-      'icon': <BookmarkIcon/>,
+      'icon': "bookmark",
+      'muiIcon': <BookmarkIcon/>,
       "link": "/bookmarks"
     }, {
-      'icon': <MessageIcon/>,
+      'icon': "message",
+      'muiIcon': <MessageIcon/>,
       "link": "/"
     }, {
-      'icon': <HomeIcon/>,
+      'icon': "home",
+      'muiIcon': <HomeIcon/>,
       "link": "/"
     }, {
-      'icon': <LogoutIcon />,
+      'icon': "logout",
+      'muiIcon': <LogoutIcon />,
       "link": "/"
     }
   ]
@@ -34,11 +38,11 @@ export const NavBar = (props) => {
             
       <div className="nav__icons">
         {icons.map(icon => (
-          <div className="icon__button">
+          <div className="icon__button" key={icon.icon}>
             <IconButton
               component={Link}
               to={icon.link}
-            > {icon.icon}
+            > {icon.muiIcon}
             </IconButton>
           </div>
         ))}

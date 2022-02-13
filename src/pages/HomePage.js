@@ -1,9 +1,9 @@
-import './HomePage.css';
 import React, { useState } from 'react';
-import DogCards from '../../components/DogCards/DogCards';
-import useAxios from '../../utilities/useAxios';
+import styled from "styled-components"
+import DogCards from '../components/DogCards/DogCards';
+import useAxios from '../utilities/useAxios';
 
-const HomePage = () => {
+export const HomePage = () => {
   const [ fadeState, setFadeState ] = useState('arrow-fade-in-start');
 
   const { response: dogDeck, error, loading } = useAxios({
@@ -32,7 +32,7 @@ const HomePage = () => {
   // },[]);
 
   return (
-    <div className="HomePage">
+    <HomePageStyled>
       {loading ? (
         <div className="loading"> Loading... </div>
       ) : (
@@ -41,8 +41,10 @@ const HomePage = () => {
           {dogDeck && <DogCards dogDeck={dogDeck}/>}
         </div>
       )}
-    </div>
+    </HomePageStyled>
   );
-}
+};
 
-export default HomePage;
+const HomePageStyled = styled.div`
+
+`;

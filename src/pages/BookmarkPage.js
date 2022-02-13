@@ -1,9 +1,9 @@
-import './bookmarkpage.css';
-import { useContext, useState } from 'react'
-import { LikedDogsContext } from '../../utilities/LikedDogsContext';
-import Modal from '../../components/Modal/Modal'
+import React, { useContext, useState } from 'react'
+import styled from 'styled-components'
+import { LikedDogsContext } from '../utilities/LikedDogsContext';
+import { Modal } from '../components';
 
-const BookmarkPage = () => {
+export const BookmarkPage = () => {
   const likedDogs = useContext(LikedDogsContext)
   const [ showModal, setShowModal ] = useState(false)
   const [ dog, setDog ] = useState(null)
@@ -14,7 +14,7 @@ const BookmarkPage = () => {
   }
 
   return (
-    <div>
+    <BookmarkPageStyled>
       <Modal dog={dog} showModal={showModal} setShowModal={setShowModal}/>
 
       {likedDogs.length < 1 ? (
@@ -50,8 +50,51 @@ const BookmarkPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </BookmarkPageStyled>
    );
-}
- 
-export default BookmarkPage;
+};
+
+const BookmarkPageStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+  text-align: center;
+  width: 100vw;
+  overflow: hidden;
+  .bookmark__header {
+
+  }
+  .bookmark__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: flex-start;
+      margin-top: 1.5em;
+  }
+  .bookmark__card {
+      margin: 10px;
+      background-color: #fff;
+      width: 30vw;
+      min-width: 280px;
+      height: 40vh;
+      box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+      border-radius: 20px;
+      background-size: cover;
+      background-position: center;
+  }
+  .bookmark__photo {
+      width: 100%;
+      height: 75%;
+      background-size: cover;
+      background-position: top;
+      border-radius: 20px 20px 0 0;
+      top: 0;
+      left: 0;
+  }
+  .bookmark__text {
+      text-align: left;
+      margin: auto 10px;
+      font-size: small;
+      line-height: 1.25em;
+  }
+`;

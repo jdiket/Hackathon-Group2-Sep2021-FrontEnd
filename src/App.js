@@ -1,24 +1,25 @@
-import './App.css';
-import { useState } from 'react'
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import styled from 'styled-components'
 import AuthPage from './pages/AuthPage/AuthPage'
 import { LikedDogsContext } from './utilities/LikedDogsContext';
-import NavBar from './components/NavBar/NavBar';
-import DogDetailPage from './pages/DogDetailPage/DogDetailPage';
-import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
 import Footer from './components/Footer/Footer';
-import HomePage from './pages/HomePage/HomePage'
 import { getUser } from './utilities/services/users-service'
+import { MainLayout } from './layouts';
+import { 
+  HomePage, 
+  BookmarkPage, 
+  DogDetailPage 
+} from './pages'
 
 const App = () => {
   const [user, setUser] = useState(getUser());
   let likedDogs = []
 
   return (
-    <div>
+    <AppStyled>
       {/* { user ? ( */}
-        <div className="App">
-          <NavBar user={user} setUser={setUser} />
+        <MainLayout>
           <div className="Main">
             <Switch>
               
@@ -39,12 +40,20 @@ const App = () => {
           </div>
 
           <Footer />
-        </div>
+        </MainLayout>
       {/* ) : (
         <AuthPage setUser={setUser} />
       )} */}
-    </div> 
+    </AppStyled> 
   );
 }
 
 export default App;
+
+const AppStyled = styled.div`
+  & .Main {
+    background-image: url("../images/landing-page-image.svg");
+    background-size: cover;
+    background-position: center;
+  }
+`;

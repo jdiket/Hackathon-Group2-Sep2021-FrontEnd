@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { DogDetailPage } from "../pages";
+import { DogDetailPage } from "../../pages";
 import { IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 

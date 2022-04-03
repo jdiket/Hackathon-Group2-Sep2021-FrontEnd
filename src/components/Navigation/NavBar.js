@@ -53,7 +53,7 @@ export const NavBar = (props) => {
 
 const NavBarStyled = styled.div`
   grid-column: 1 / span 14;
-  grid-row: 1 / 2;
+  grid-row: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;

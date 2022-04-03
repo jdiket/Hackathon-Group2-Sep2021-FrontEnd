@@ -11,10 +11,7 @@ export const InnerLayout = ({ children }) => {
 
 const InnerLayoutStyled = styled.div`
   grid-column: 2 / span 12;
-  grid-row-start: 2;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
+  grid-row: 2;
 
   @media ${props => props.theme.breakpoints.tablet} {
     grid-column: 2 / span 6;

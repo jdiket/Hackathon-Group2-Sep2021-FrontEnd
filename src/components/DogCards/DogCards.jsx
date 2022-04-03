@@ -1,6 +1,6 @@
 import React,{ useState, useRef, useContext } from 'react'
 import { LikedDogsContext } from '../../utilities/LikedDogsContext'
-import Modal from '../../components/Modal/Modal'
+import { Modal } from '..'
 import TinderCard from 'react-tinder-card'
 import './DogCards.css'
 
@@ -67,7 +67,7 @@ const DogCards = ({ dogDeck }) => {
                   <button 
                     className={"more__button"}
                     onClick={() => openModal(dog)}
-                  > modal
+                  > View More
                   </button>
                 </div>
                 <div className="content__text">

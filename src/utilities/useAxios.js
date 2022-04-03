@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3003/'
+axios.defaults.baseURL = process.env.NODE_ENV === "production" 
+  ? process.env.REACT_APP_DATABASE 
+  : 'http://localhost:3003/'
 
 const useAxios = ( params ) => {
   const [response, setResponse] = useState(null);

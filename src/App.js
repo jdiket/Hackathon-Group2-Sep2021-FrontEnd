@@ -9,7 +9,8 @@ import { MainLayout } from './layouts';
 import { 
   HomePage, 
   BookmarkPage, 
-  DogDetailPage 
+  DogDetailPage,
+  NotFoundPage
 } from './pages'
 
 const App = () => {
@@ -24,17 +25,16 @@ const App = () => {
             <Switch>
               
               {/* Landing Page */}
-
               <LikedDogsContext.Provider value={likedDogs}>
                 <Route exact path="/" component={HomePage} />
                 <Route path="/bookmark" component={BookmarkPage} />
-              </LikedDogsContext.Provider>
-
-              <Route path="/detail/:id" component={DogDetailPage} />
+                <Route path="/detail/:id" component={DogDetailPage} />
+              </LikedDogsContext.Provider>             
 
               {/* chat component */}
               
               {/* not found page */}
+              <Route path="*" component={NotFoundPage} />
               
             </Switch>
           </div>

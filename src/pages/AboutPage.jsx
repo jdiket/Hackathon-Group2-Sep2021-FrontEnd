@@ -1,6 +1,6 @@
-import './aboutpage.css';
 
-export default function AboutPage() {
+
+export const AboutPage = () => {
   return (
     <div>
       <h1> I am an about page </h1>

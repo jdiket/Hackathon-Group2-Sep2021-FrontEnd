@@ -8,6 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import MessageIcon from "@material-ui/icons/Message";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { MdInfo } from 'react-icons/md'
 
 export const NavBar = (props) => {
   const icons = [
@@ -15,6 +16,11 @@ export const NavBar = (props) => {
       'icon': "bookmark",
       'muiIcon': <BookmarkIcon/>,
       "link": "/bookmarks"
+    },
+    {
+      'icon': "about",
+      'muiIcon': <MdInfo/>,
+      "link": "/about"
     }, 
     // {
     //   'icon': "message",
@@ -62,8 +68,6 @@ const NavBarStyled = styled.div`
     0px 3px 1px -1px rgb(0 0 0 / 20%), 
     0px 2px 1px 0px rgb(0 0 0 / 14%), 
     0px 2px 3px 0px rgb(0 0 0 / 12%);
-  height: 10vh;
-  width: 100%;
   & .nav__header {
     margin-left: 2vw;
     color: ${props => props.theme.colors.dark};

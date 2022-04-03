@@ -8,6 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import MessageIcon from "@material-ui/icons/Message";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { MdInfo } from 'react-icons/md'
 
 export const NavBar = (props) => {
   const icons = [
@@ -15,19 +16,22 @@ export const NavBar = (props) => {
       'icon': "bookmark",
       'muiIcon': <BookmarkIcon/>,
       "link": "/bookmarks"
-    }, {
-      'icon': "message",
-      'muiIcon': <MessageIcon/>,
-      "link": "/"
-    }, {
-      'icon': "home",
-      'muiIcon': <HomeIcon/>,
-      "link": "/"
-    }, {
-      'icon': "logout",
-      'muiIcon': <LogoutIcon />,
-      "link": "/"
-    }
+    },
+    {
+      'icon': "about",
+      'muiIcon': <MdInfo/>,
+      "link": "/about"
+    }, 
+    // {
+    //   'icon': "message",
+    //   'muiIcon': <MessageIcon/>,
+    //   "link": "/"
+    // }, 
+    // {
+    //   'icon': "logout",
+    //   'muiIcon': <LogoutIcon />,
+    //   "link": "/"
+    // }
   ]
 
   return (
@@ -36,7 +40,7 @@ export const NavBar = (props) => {
         <h1>Dog Day</h1>
       </Link>
             
-      {/* <div className="nav__icons">
+      <div className="nav__icons">
         {icons.map(icon => (
           <div className="icon__button" key={icon.icon}>
             <IconButton
@@ -46,14 +50,14 @@ export const NavBar = (props) => {
             </IconButton>
           </div>
         ))}
-      </div> */}
+      </div>
     </NavBarStyled>
   );
 };
 
 const NavBarStyled = styled.div`
-  grid-column: 2 / span 12;
-  grid-row: 1 / 2;
+  grid-column: 1 / span 14;
+  grid-row: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,8 +68,6 @@ const NavBarStyled = styled.div`
     0px 3px 1px -1px rgb(0 0 0 / 20%), 
     0px 2px 1px 0px rgb(0 0 0 / 14%), 
     0px 2px 3px 0px rgb(0 0 0 / 12%);
-  height: 10vh;
-  width: 100%;
   & .nav__header {
     margin-left: 2vw;
     color: ${props => props.theme.colors.dark};

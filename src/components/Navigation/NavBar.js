@@ -36,7 +36,7 @@ export const NavBar = (props) => {
         <h1>Dog Day</h1>
       </Link>
             
-      <div className="nav__icons">
+      {/* <div className="nav__icons">
         {icons.map(icon => (
           <div className="icon__button" key={icon.icon}>
             <IconButton
@@ -46,7 +46,7 @@ export const NavBar = (props) => {
             </IconButton>
           </div>
         ))}
-      </div>
+      </div> */}
     </NavBarStyled>
   );
 };

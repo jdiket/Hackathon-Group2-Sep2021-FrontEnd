@@ -59,7 +59,6 @@ const BookmarkPageStyled = styled.div`
   flex-direction: column;
   margin-top: 1.5em;
   text-align: center;
-  width: 100vw;
   overflow: hidden;
   .bookmark__header {
 

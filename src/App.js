@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import styled from 'styled-components'
 import AuthPage from './pages/AuthPage/AuthPage'
 import { LikedDogsContext } from './utilities/LikedDogsContext';
 import { getUser } from './utilities/services/users-service'
@@ -24,7 +23,7 @@ const App = () => {
         {/* Landing Page */}
         <LikedDogsContext.Provider value={likedDogs}>
           <Route exact path="/" component={HomePage} />
-          <Route path="/bookmark" component={BookmarkPage} />
+          <Route path="/bookmarks" component={BookmarkPage} />
           <Route path="/detail/:id" component={DogDetailPage} />
         </LikedDogsContext.Provider>             
 

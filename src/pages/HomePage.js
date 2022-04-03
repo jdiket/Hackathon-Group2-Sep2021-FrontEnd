@@ -8,7 +8,6 @@ import useAxios from '../utilities/useAxios';
 let alreadyRemoved = []
 
 export const HomePage = () => {
-  const [ fadeState, setFadeState ] = useState('arrow-fade-in-start');
   const [ lastDirection, setLastDirection ] = useState(null)
   const [ showModal, setShowModal ] = useState(false)
   const [ dog, setDog ] = useState(null)
@@ -48,23 +47,6 @@ export const HomePage = () => {
       accept: '*/*',
     },
   });
-
-  // useEffect(() => {
-    // const changeFadeStateOnLoad =() => {
-    //   setTimeout(() => {
-    //     setFadeState('arrow-fade-in-end');
-    //   },250)
-    // }
-  
-    // const hideArrow = () => {
-    //   setTimeout(() => {
-    //     setFadeState('arrow-hidden');
-    //   },2000)
-    // }
-  
-    // changeFadeStateOnLoad();
-    // hideArrow();
-  // },[]);
 
   return (
     <HomePageStyled>
@@ -113,6 +95,7 @@ export const HomePage = () => {
 };
 
 const HomePageStyled = styled.div`
+  min-height: calc(100vh - 7.6rem);
   & .landing-page {
     & .Dog-Cards {
       display: flex;

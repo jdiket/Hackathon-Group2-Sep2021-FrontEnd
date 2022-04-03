@@ -15,19 +15,17 @@ export const NavBar = (props) => {
       'icon': "bookmark",
       'muiIcon': <BookmarkIcon/>,
       "link": "/bookmarks"
-    }, {
-      'icon': "message",
-      'muiIcon': <MessageIcon/>,
-      "link": "/"
-    }, {
-      'icon': "home",
-      'muiIcon': <HomeIcon/>,
-      "link": "/"
-    }, {
-      'icon': "logout",
-      'muiIcon': <LogoutIcon />,
-      "link": "/"
-    }
+    }, 
+    // {
+    //   'icon': "message",
+    //   'muiIcon': <MessageIcon/>,
+    //   "link": "/"
+    // }, 
+    // {
+    //   'icon': "logout",
+    //   'muiIcon': <LogoutIcon />,
+    //   "link": "/"
+    // }
   ]
 
   return (
@@ -36,7 +34,7 @@ export const NavBar = (props) => {
         <h1>Dog Day</h1>
       </Link>
             
-      {/* <div className="nav__icons">
+      <div className="nav__icons">
         {icons.map(icon => (
           <div className="icon__button" key={icon.icon}>
             <IconButton
@@ -46,7 +44,7 @@ export const NavBar = (props) => {
             </IconButton>
           </div>
         ))}
-      </div> */}
+      </div>
     </NavBarStyled>
   );
 };

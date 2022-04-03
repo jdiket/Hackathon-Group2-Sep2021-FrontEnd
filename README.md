@@ -15,7 +15,7 @@
     <br />
     <a href="https://github.com/jdiket/Hackathon-Group2-Sep2021-BackEnd"><strong>Explore the backend documentation »</strong></a>
     <br />
-    <a href="https://github.com/alexfranco12/hackathon-group2-sep2021-frontend">View Demo</a>
+    <a href="https://nimble-gecko-f04fe0.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/alexfranco12/hackathon-group2-sep2021-frontend/issues">Report Bug</a>
     ·

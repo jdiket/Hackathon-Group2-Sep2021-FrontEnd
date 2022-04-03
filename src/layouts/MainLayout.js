@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import { NavBar } from "../components";
+import { NavBar, Footer } from "../components";
 import { InnerLayout } from "./InnerLayout";
 
 export const MainLayout = ({ children }) => {
@@ -10,6 +10,7 @@ export const MainLayout = ({ children }) => {
       <InnerLayout >
         {children}
       </InnerLayout>
+      <Footer />
     </MainLayoutStyled>
   );
 };
@@ -17,7 +18,7 @@ export const MainLayout = ({ children }) => {
 const MainLayoutStyled = styled.div`
   display: grid;
   grid-template-columns: 0 repeat(12, minmax(auto, 1fr)) 0;
-  grid-template-rows: 4.8rem auto;
+  grid-template-rows: 4.8rem calc(100vh - 7.6rem) 2.8rem;
   gap: 0 2rem;
   background-image: url("../images/landing-page-image.svg");
   background-size: cover;

@@ -52,7 +52,7 @@ export const NavBar = (props) => {
 };
 
 const NavBarStyled = styled.div`
-  grid-column: 2 / span 12;
+  grid-column: 1 / span 14;
   grid-row: 1 / 2;
   display: flex;
   justify-content: space-between;

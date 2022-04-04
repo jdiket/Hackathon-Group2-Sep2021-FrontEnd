@@ -41,18 +41,18 @@ const GlobalStyles = createGlobalStyle`
     letter-spacing: -2%;
   }
 
-  .button {
+  button {
     font-weight: 700;
     font-size: 10px;
     letter-spacing: 3%;
   }
 
-  .link {
+  link {
     font-weight: 700;
     font-size: 16px;
   }
 
-  .link:hover {
+  link:hover {
     color: #4B4DED;
   }
 `;

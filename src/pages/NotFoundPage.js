@@ -12,5 +12,5 @@ export const NotFoundPage = () => {
 };
 
 const NotFoundPageStyled = styled.div`
-
+  min-height: calc(100vh - 7.6rem);
 `;

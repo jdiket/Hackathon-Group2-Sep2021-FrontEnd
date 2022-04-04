@@ -57,7 +57,8 @@ export const BookmarkPage = () => {
 const BookmarkPageStyled = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 1.5em;
+  min-height: calc(100vh - 7.6rem);
+  padding-top: 1.5em;
   text-align: center;
   overflow: hidden;
   .bookmark__header {

@@ -18,23 +18,24 @@ const App = () => {
 
   return (
     <MainLayout>
-      { user ? 
-        <Switch>
-          {/* Landing Page */}
-          <LikedDogsContext.Provider value={likedDogs}>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/bookmarks" component={BookmarkPage} />
-            <Route path="/detail/:id" component={DogDetailPage} />
-          </LikedDogsContext.Provider>             
+      { user 
+        ? <Switch>
+            {/* Landing Page */}
+            <LikedDogsContext.Provider value={likedDogs}>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/bookmarks" component={BookmarkPage} />
+              <Route path="/detail/:id" component={DogDetailPage} />
+            </LikedDogsContext.Provider>             
 
-          {/* chat component */}
-          
-          {/* not found page */}
-          <Route path="*" component={NotFoundPage} />
-          
-        </Switch>
-      : <AuthPage /> }
+            {/* chat component */}
+            
+            {/* not found page */}
+            <Route path="*" component={NotFoundPage} />
+            
+          </Switch>
+        : <AuthPage setUser={setUser} /> 
+      }
     </MainLayout>
   );
 }

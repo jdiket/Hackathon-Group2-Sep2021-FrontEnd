@@ -2,10 +2,16 @@ import React from "react";
 import styled from "styled-components"
 import { NavBar, Footer } from "../components";
 import { InnerLayout } from "./InnerLayout";
+import svg from '../images/landing-page-image.svg'
 
 export const MainLayout = ({ children }) => {
   return ( 
-    <MainLayoutStyled>
+    <MainLayoutStyled 
+      style={{ 
+        backgroundImage: `url(${svg})`,
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+      }}>
       <NavBar />
       <InnerLayout >
         {children}
@@ -20,10 +26,6 @@ const MainLayoutStyled = styled.div`
   grid-template-columns: 0 repeat(12, minmax(auto, 1fr)) 0;
   grid-template-rows: 4.8rem auto 2.8rem;
   gap: 0 2rem;
-  background-image: url("../images/landing-page-image.svg");
-  background-size: cover;
-  background-position: center;
-  min-width: 320px;
 
   @media ${props => props.theme.breakpoints.tablet} {
     grid-template-columns: 0 repeat(6, 1fr) 0 ;
